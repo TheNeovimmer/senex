@@ -1,0 +1,14 @@
+{
+    "name": "tessnim/autimind",
+    "autoload": {
+        "psr-4": {
+            "Tessnim\\Autimind\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tasnim"
+        }
+    ],
+    "require": {}
+}
