@@ -1,14 +1,29 @@
 {
-    "name": "tessnim/autimind",
+    "name": "msi/projet-pfe-autimind",
     "autoload": {
         "psr-4": {
-            "Tessnim\\Autimind\\": "src/"
+            "Msi\\ProjetPfeAutimind\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "tasnim"
+            "name": "tessnim"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "phpmailer/phpmailer": "^7.0"
+    },
+ 
+"autoload":{
+"psr-4": {
+"Config\\": "Config/",
+"Core\\": "src/Core/",
+"Controllers\\": "src/Controllers/",
+"Models\\": "src/Models/",
+"Services\\": "src/Services/"
+}
+
+}
+
 }

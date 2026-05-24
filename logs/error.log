@@ -1,0 +1,464 @@
+[11-May-2026 10:57:04 UTC] PHP Fatal error:  Uncaught Error: Class "Controllers\ErrorController" not found in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:72
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\src\core\Router.php(66): Core\Router->handle404()
+#1 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 72
+[11-May-2026 11:01:53 UTC] PHP Fatal error:  Uncaught Error: Class "Controllers\BlogModel" not found in C:\laragon\www\Projet-PFE-autimind\src\Controllers\HomeController.php:18
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\src\core\Router.php(61): Controllers\HomeController->showhomepage()
+#1 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\Controllers\HomeController.php on line 18
+[11-May-2026 11:02:36 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:03:35 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:03:37 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:03:38 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:03:38 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:03:39 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:03:54 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:04:30 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:04:31 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:04:31 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:04:32 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:04:32 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:27 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:28 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:28 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:28 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:29 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:29 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:29 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:29 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:29 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:30 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:30 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:30 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:30 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:30 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:30 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:31 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:31 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:31 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:31 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:31 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:32 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:32 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:49 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:50 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:50 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:50 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:51 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:51 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:51 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:51 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:51 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:52 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:52 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:52 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:06:52 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:08:10 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:08:11 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:08:11 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:08:12 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:08:12 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:08:12 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:08:12 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\core\Router.php on line 57
+[11-May-2026 11:12:44 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\Core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\Core\Router.php on line 57
+[11-May-2026 11:12:45 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\Core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\Core\Router.php on line 57
+[11-May-2026 11:12:46 UTC] PHP Fatal error:  Uncaught Exception: Le contrôleur Controllers\ContactController n'existe pas. in C:\laragon\www\Projet-PFE-autimind\src\Core\Router.php:57
+Stack trace:
+#0 C:\laragon\www\Projet-PFE-autimind\public\index.php(13): Core\Router->handleRequest()
+#1 {main}
+  thrown in C:\laragon\www\Projet-PFE-autimind\src\Core\Router.php on line 57
+[18-May-2026 09:43:47 UTC] PHP Warning:  require_once(C:\laragon\www\senex-pfe\src\Views/components/button.php): Failed to open stream: No such file or directory in C:\laragon\www\senex-pfe\src\Views\home.php on line 3
+[18-May-2026 09:43:47 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\laragon\www\senex-pfe\src\Views/components/button.php' (include_path='.;C:/laragon/etc/php/pear') in C:\laragon\www\senex-pfe\src\Views\home.php:3
+Stack trace:
+#0 C:\laragon\www\senex-pfe\src\Controllers\HomeController.php(19): require_once()
+#1 C:\laragon\www\senex-pfe\src\Core\Router.php(61): Controllers\HomeController->showhomepage()
+#2 C:\laragon\www\senex-pfe\public\index.php(13): Core\Router->handleRequest()
+#3 {main}
+  thrown in C:\laragon\www\senex-pfe\src\Views\home.php on line 3
+[18-May-2026 10:27:58 UTC] PHP Warning:  require(C:\laragon\www\senex-pfe\src\Views/base.php): Failed to open stream: No such file or directory in C:\laragon\www\senex-pfe\src\Views\home.php on line 14
+[18-May-2026 10:27:58 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\laragon\www\senex-pfe\src\Views/base.php' (include_path='.;C:/laragon/etc/php/pear') in C:\laragon\www\senex-pfe\src\Views\home.php:14
+Stack trace:
+#0 C:\laragon\www\senex-pfe\src\Controllers\HomeController.php(19): require_once()
+#1 C:\laragon\www\senex-pfe\src\Core\Router.php(61): Controllers\HomeController->showhomepage()
+#2 C:\laragon\www\senex-pfe\public\index.php(13): Core\Router->handleRequest()
+#3 {main}
+  thrown in C:\laragon\www\senex-pfe\src\Views\home.php on line 14
+[18-May-2026 10:27:59 UTC] PHP Warning:  require(C:\laragon\www\senex-pfe\src\Views/base.php): Failed to open stream: No such file or directory in C:\laragon\www\senex-pfe\src\Views\home.php on line 14
+[18-May-2026 10:27:59 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\laragon\www\senex-pfe\src\Views/base.php' (include_path='.;C:/laragon/etc/php/pear') in C:\laragon\www\senex-pfe\src\Views\home.php:14
+Stack trace:
+#0 C:\laragon\www\senex-pfe\src\Controllers\HomeController.php(19): require_once()
+#1 C:\laragon\www\senex-pfe\src\Core\Router.php(61): Controllers\HomeController->showhomepage()
+#2 C:\laragon\www\senex-pfe\public\index.php(13): Core\Router->handleRequest()
+#3 {main}
+  thrown in C:\laragon\www\senex-pfe\src\Views\home.php on line 14
+[18-May-2026 10:31:05 UTC] PHP Warning:  require(C:\laragon\www\senex-pfe\src\Views/base.php): Failed to open stream: No such file or directory in C:\laragon\www\senex-pfe\src\Views\home.php on line 14
+[18-May-2026 10:31:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\laragon\www\senex-pfe\src\Views/base.php' (include_path='.;C:/laragon/etc/php/pear') in C:\laragon\www\senex-pfe\src\Views\home.php:14
+Stack trace:
+#0 C:\laragon\www\senex-pfe\src\Controllers\HomeController.php(19): require_once()
+#1 C:\laragon\www\senex-pfe\src\Core\Router.php(61): Controllers\HomeController->showhomepage()
+#2 C:\laragon\www\senex-pfe\public\index.php(13): Core\Router->handleRequest()
+#3 {main}
+  thrown in C:\laragon\www\senex-pfe\src\Views\home.php on line 14
+[18-May-2026 10:31:05 UTC] PHP Warning:  require(C:\laragon\www\senex-pfe\src\Views/base.php): Failed to open stream: No such file or directory in C:\laragon\www\senex-pfe\src\Views\home.php on line 14
+[18-May-2026 10:31:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\laragon\www\senex-pfe\src\Views/base.php' (include_path='.;C:/laragon/etc/php/pear') in C:\laragon\www\senex-pfe\src\Views\home.php:14
+Stack trace:
+#0 C:\laragon\www\senex-pfe\src\Controllers\HomeController.php(19): require_once()
+#1 C:\laragon\www\senex-pfe\src\Core\Router.php(61): Controllers\HomeController->showhomepage()
+#2 C:\laragon\www\senex-pfe\public\index.php(13): Core\Router->handleRequest()
+#3 {main}
+  thrown in C:\laragon\www\senex-pfe\src\Views\home.php on line 14
+[21-May-2026 07:51:55 UTC] PHP Warning:  require_once(C:\laragon\www\senex-pfe\src\Views/header.php): Failed to open stream: No such file or directory in C:\laragon\www\senex-pfe\src\Views\base.php on line 20
+[21-May-2026 07:51:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\laragon\www\senex-pfe\src\Views/header.php' (include_path='.;C:/laragon/etc/php/pear') in C:\laragon\www\senex-pfe\src\Views\base.php:20
+Stack trace:
+#0 C:\laragon\www\senex-pfe\src\Views\home.php(14): require()
+#1 C:\laragon\www\senex-pfe\src\Controllers\HomeController.php(19): require_once('C:\\laragon\\www\\...')
+#2 C:\laragon\www\senex-pfe\src\Core\Router.php(61): Controllers\HomeController->showhomepage()
+#3 C:\laragon\www\senex-pfe\public\index.php(13): Core\Router->handleRequest()
+#4 {main}
+  thrown in C:\laragon\www\senex-pfe\src\Views\base.php on line 20
+[24-May-2026 13:12:33 Africa/Tunis] PHP Warning:  require(/var/www/html/src/Core/../../config/app.php): Failed to open stream: No such file or directory in /var/www/html/src/Core/Router.php on line 8
+[24-May-2026 13:12:33 Africa/Tunis] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/src/Core/../../config/app.php' (include_path='.:/usr/share/php') in /var/www/html/src/Core/Router.php:8
+Stack trace:
+#0 /var/www/html/vendor/composer/ClassLoader.php(576): include()
+#1 /var/www/html/vendor/composer/ClassLoader.php(427): {closure:Composer\Autoload\ClassLoader::initializeIncludeClosure():575}()
+#2 /var/www/html/public/index.php(12): Composer\Autoload\ClassLoader->loadClass()
+#3 {main}
+  thrown in /var/www/html/src/Core/Router.php on line 8
+[24-May-2026 13:12:38 Africa/Tunis] PHP Warning:  require(/var/www/html/src/Core/../../config/app.php): Failed to open stream: No such file or directory in /var/www/html/src/Core/Router.php on line 8
+[24-May-2026 13:12:38 Africa/Tunis] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/src/Core/../../config/app.php' (include_path='.:/usr/share/php') in /var/www/html/src/Core/Router.php:8
+Stack trace:
+#0 /var/www/html/vendor/composer/ClassLoader.php(576): include()
+#1 /var/www/html/vendor/composer/ClassLoader.php(427): {closure:Composer\Autoload\ClassLoader::initializeIncludeClosure():575}()
+#2 /var/www/html/public/index.php(12): Composer\Autoload\ClassLoader->loadClass()
+#3 {main}
+  thrown in /var/www/html/src/Core/Router.php on line 8
+[24-May-2026 13:12:52 Africa/Tunis] PHP Warning:  require(/var/www/html/src/Core/../../config/routes.php): Failed to open stream: No such file or directory in /var/www/html/src/Core/Router.php on line 16
+[24-May-2026 13:12:52 Africa/Tunis] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/src/Core/../../config/routes.php' (include_path='.:/usr/share/php') in /var/www/html/src/Core/Router.php:16
+Stack trace:
+#0 /var/www/html/public/index.php(12): Core\Router->__construct()
+#1 {main}
+  thrown in /var/www/html/src/Core/Router.php on line 16
+[24-May-2026 13:12:55 Africa/Tunis] PHP Warning:  require(/var/www/html/src/Core/../../config/routes.php): Failed to open stream: No such file or directory in /var/www/html/src/Core/Router.php on line 16
+[24-May-2026 13:12:55 Africa/Tunis] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/src/Core/../../config/routes.php' (include_path='.:/usr/share/php') in /var/www/html/src/Core/Router.php:16
+Stack trace:
+#0 /var/www/html/public/index.php(12): Core\Router->__construct()
+#1 {main}
+  thrown in /var/www/html/src/Core/Router.php on line 16
+[24-May-2026 13:12:55 Africa/Tunis] PHP Warning:  require(/var/www/html/src/Core/../../config/routes.php): Failed to open stream: No such file or directory in /var/www/html/src/Core/Router.php on line 16
+[24-May-2026 13:12:55 Africa/Tunis] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/src/Core/../../config/routes.php' (include_path='.:/usr/share/php') in /var/www/html/src/Core/Router.php:16
+Stack trace:
+#0 /var/www/html/public/index.php(12): Core\Router->__construct()
+#1 {main}
+  thrown in /var/www/html/src/Core/Router.php on line 16
+[24-May-2026 13:21:12 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Models\ContactModel" not found in /var/www/html/src/Controllers/ContactController.php:12
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 12
+[24-May-2026 13:21:19 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Models\ContactModel" not found in /var/www/html/src/Controllers/ContactController.php:12
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 12
+[24-May-2026 13:21:19 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Models\ContactModel" not found in /var/www/html/src/Controllers/ContactController.php:12
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 12
+[24-May-2026 13:21:21 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Models\ContactModel" not found in /var/www/html/src/Controllers/ContactController.php:12
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 12
+[24-May-2026 13:21:35 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Models\ContactModel" not found in /var/www/html/src/Controllers/ContactController.php:12
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 12
+[24-May-2026 13:24:32 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Models\ContactModel" not found in /var/www/html/src/Controllers/ContactController.php:12
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 12
+[24-May-2026 13:25:52 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Models\ContactModel" not found in /var/www/html/src/Controllers/ContactController.php:12
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 12
+[24-May-2026 13:25:52 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Models\ContactModel" not found in /var/www/html/src/Controllers/ContactController.php:12
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 12
+[24-May-2026 13:25:54 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Models\ContactModel" not found in /var/www/html/src/Controllers/ContactController.php:12
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 12
+[24-May-2026 13:27:09 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Services\Mailer" not found in /var/www/html/src/Controllers/ContactController.php:13
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 13
+[24-May-2026 13:27:10 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Services\Mailer" not found in /var/www/html/src/Controllers/ContactController.php:13
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 13
+[24-May-2026 13:27:18 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Services\Mailer" not found in /var/www/html/src/Controllers/ContactController.php:13
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 13
+[24-May-2026 13:27:19 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Services\Mailer" not found in /var/www/html/src/Controllers/ContactController.php:13
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 13
+[24-May-2026 13:27:34 Africa/Tunis] PHP Fatal error:  Uncaught Error: Class "Services\Mailer" not found in /var/www/html/src/Controllers/ContactController.php:13
+Stack trace:
+#0 /var/www/html/src/Core/Router.php(60): Controllers\ContactController->__construct()
+#1 /var/www/html/public/index.php(13): Core\Router->handleRequest()
+#2 {main}
+  thrown in /var/www/html/src/Controllers/ContactController.php on line 13

@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../config/database.php';
+use Config\Database;
 
 // Bloquer l'accès depuis le navigateur
 if (php_sapi_name() !== 'cli') {
@@ -82,7 +82,7 @@ try {
     $pdo->rollBack();
     echo "Erreur pendant la migration : " . $e->getMessage() . "\n";
 }
-Réduire
+
 
 
 
