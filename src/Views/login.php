@@ -11,32 +11,35 @@ ob_start();
         <h1 class="fw-bold mb-5 text-accent heading-xl">
           WELCOME BACK,<br>CHALLENGER!
         </h1>
-        <form action="/login" method="POST">
-          <div class="mb-4 mx-auto mw-762">
-            <div class="login-input-wrapper">
-              <input type="text" name="email" class="login-input" placeholder="Email or Username" required>
+        <div class="login-card">
+          <form action="/login" method="POST">
+            <div class="mb-4">
+              <div class="login-input-wrapper">
+                <input type="text" name="email" class="login-input" placeholder="Email or Username" required>
+              </div>
             </div>
-          </div>
-          <div class="mb-4 mx-auto mw-762">
-            <div class="login-input-wrapper">
-              <input type="password" name="password" class="login-input" placeholder="password" required>
+            <div class="mb-4">
+              <div class="login-input-wrapper">
+                <input type="password" name="password" class="login-input" placeholder="Password" required>
+              </div>
             </div>
+            <button type="submit" class="btn login-btn-full">LOG IN</button>
+          </form>
+          <div class="d-flex justify-content-between align-items-center mt-4 px-2">
+            <label class="d-flex align-items-center gap-2 text-white fs-5 cursor-pointer">
+              <input type="checkbox" class="checkbox-senex">
+              Remember me
+            </label>
+            <a href="#" class="btn-link-senex fs-5">Forget password</a>
           </div>
-          <button type="submit" class="btn login-btn-full mx-auto mw-762">LOG IN</button>
-        </form>
-        <div class="d-flex justify-content-between align-items-center mt-4 mx-auto px-3 mw-625">
-          <span class="text-white fs-5">Remember me</span>
-          <div class="remember-box"></div>
-          <span class="text-white fs-5">Forget password</span>
+          <div class="login-divider my-4">or</div>
+          <button class="btn-login-google d-flex align-items-center justify-content-center gap-3">
+            <i class="fab fa-google"></i>
+            <span>continue with google</span>
+          </button>
         </div>
-        <div class="mt-4 mx-auto mw-762">
-          <div class="login-input-wrapper d-flex align-items-center justify-content-center gap-3">
-            <i class="fab fa-google text-white fs-15"></i>
-            <span class="text-white fs-5">continue with google</span>
-          </div>
-        </div>
-        <a href="/signin" class="d-block mt-4 text-white fs-5 text-decoration-none">CREATE AN ACCOUNT</a>
-        <p class="text-white mt-3 fs-5">
+        <a href="/signin" class="btn btn-outline-senex mt-4 px-5 py-3 d-inline-block fs-5">CREATE AN ACCOUNT</a>
+        <p class="text-white mt-4 fs-5">
           Log in to vote, comment, and join live dares<br>with the community.
         </p>
       </div>

@@ -845,6 +845,7 @@ ul {
 
 /* ===== Z-INDEX ===== */
 .z-1 { z-index: 1; }
+.cursor-pointer { cursor: pointer; }
 
 /* ===== TEXT ===== */
 .text-shadow-hero { text-shadow: 0 4px 15px rgba(0,0,0,0.25); }
@@ -1184,6 +1185,286 @@ ul {
 
 .footer-copyright {
   font-size: 0.85rem;
+}
+
+/* ===== ENHANCED ABOUT ===== */
+.stat-number-gradient {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--clr-accent), var(--clr-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mv-card {
+  transition: all 0.4s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(241, 91, 181, 0.15);
+}
+
+.mv-card:hover .mv-icon {
+  filter: drop-shadow(0 0 8px rgba(155, 93, 229, 0.5));
+}
+
+.value-block {
+  background: var(--clr-bg-card-muted);
+  border: 1px solid var(--clr-accent-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.value-block:hover {
+  border-color: var(--clr-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(241, 91, 181, 0.12);
+}
+
+.hero-about-wrapper {
+  background: rgba(30, 30, 47, 0.75);
+  border: 5px solid var(--clr-accent);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* ===== ENHANCED CONTACT ===== */
+.contact-form-card {
+  background: var(--clr-bg-card-muted);
+  border: 2px solid var(--clr-accent);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+}
+
+.contact-info-row {
+  transition: all 0.3s ease;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  margin: 0 -0.75rem;
+}
+
+.contact-info-row:hover {
+  background: rgba(241, 91, 181, 0.08);
+  transform: translateX(4px);
+}
+
+.contact-hero-desc {
+  font-size: 1.5rem;
+  color: white;
+  line-height: 1.6;
+}
+
+.feature-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.feature-desc {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0;
+}
+
+.btn-send {
+  padding: 14px 60px;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+}
+
+/* ===== ENHANCED LOGIN ===== */
+.login-card {
+  background: var(--clr-bg-card-muted);
+  border: 2px solid var(--clr-accent);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+}
+
+.login-input-wrapper {
+  background: var(--clr-bg-input);
+  border: 1px solid var(--clr-accent);
+  border-radius: var(--radius-lg);
+  padding: 20px 32px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-input-wrapper:focus-within {
+  border-color: var(--clr-accent-hover);
+  box-shadow: 0 0 0 3px rgba(241, 91, 181, 0.15);
+}
+
+.login-input {
+  font-size: 1.25rem;
+  outline: none;
+  background: transparent;
+  border: 0;
+  color: white;
+  width: 100%;
+}
+
+.login-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.checkbox-senex {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--clr-accent);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.checkbox-senex:checked {
+  background: var(--clr-accent);
+  border-color: var(--clr-accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.btn-login-google {
+  background: transparent;
+  border: 2px solid var(--clr-accent);
+  border-radius: var(--radius-lg);
+  color: white;
+  font-weight: 600;
+  padding: 16px 32px;
+  width: 100%;
+  transition: all 0.3s ease;
+  font-family: var(--ff-base);
+  font-size: 1rem;
+}
+
+.btn-login-google:hover {
+  background: rgba(241, 91, 181, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-login-google i {
+  font-size: 1.25rem;
+}
+
+.btn-link-senex {
+  color: var(--clr-accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+}
+
+.btn-link-senex:hover {
+  color: var(--clr-accent-hover);
+  text-decoration: underline;
+}
+
+/* ===== ENHANCED SIGNUP ===== */
+.signup-feature-item {
+  transition: all 0.3s ease;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  margin: 0 -0.75rem;
+}
+
+.signup-feature-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(4px);
+}
+
+.signup-image-card {
+  border-radius: 16px;
+  border: 2px solid var(--clr-accent);
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.auth-social-circle--light {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border: 2px solid var(--clr-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.auth-social-circle--light i {
+  color: var(--clr-accent);
+  font-size: 1.2rem;
+}
+
+.auth-social-circle--light:hover {
+  background: var(--clr-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(241, 91, 181, 0.3);
+}
+
+.auth-social-circle--light:hover i {
+  color: white;
+}
+
+.btn-signup-primary {
+  background: var(--clr-accent);
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 32px;
+  width: 100%;
+  font-size: 1rem;
+  font-family: var(--ff-base);
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+}
+
+.btn-signup-primary:hover {
+  background: var(--clr-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(241, 91, 181, 0.3);
+  color: white;
+}
+
+.input-auth {
+  border-radius: 50px;
+  border: 2px solid var(--clr-accent);
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-auth:focus {
+  border-color: var(--clr-accent-hover);
+  box-shadow: 0 0 0 3px rgba(241, 91, 181, 0.15);
 }
 
 /* ===== RESPONSIVE ===== */
