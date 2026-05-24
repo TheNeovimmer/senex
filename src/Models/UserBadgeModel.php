@@ -23,8 +23,9 @@ class UserBadgeModel extends BaseModel {
     }
 
     public function hasBadge(int $userId, int $badgeId): bool {
-        return (bool)$this->findOneWhere('user_id', $userId) &&
-               $this->findOneWhere('badge_id', $badgeId);
+        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM user_badges WHERE user_id = ? AND badge_id = ?");
+        $stmt->execute([$userId, $badgeId]);
+        return (bool)$stmt->fetchColumn();
     }
 
     public function toggleDisplay(int $userBadgeId): bool {

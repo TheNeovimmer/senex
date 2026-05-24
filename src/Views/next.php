@@ -1,9 +1,3 @@
-<?php
-
-$title = "SENEX - Next Dare";
-ob_start();
-
-?>
 <section class="section-padding px-3">
   <div class="container">
     <div class="hero-bordered text-center p-5" data-aos="fade-up">
@@ -37,65 +31,69 @@ ob_start();
     <h2 class="text-center mb-5 fw-bold text-accent heading-md ls-lg text-capitalize" data-aos="fade-up">
       An unexpected challenge is live.<br>Will you step up or just watch?
     </h2>
+<?php if (!empty($upcomingChallenges)): $first = $upcomingChallenges[0]; ?>
     <div class="row align-items-center g-5" data-aos="fade-up">
       <div class="col-lg-6 text-center">
-        <img src="https://placehold.co/594x549" alt="Beer Pong" class="w-100 rounded-5 border-accent mw-594">
+        <img src="https://placehold.co/594x549" alt="<?= htmlspecialchars($first['title']) ?>" class="w-100 rounded-5 border-accent mw-594">
       </div>
       <div class="col-lg-6">
-        <p class="challenge-subtitle ls-lg">The dare is happening tomorrow</p>
+        <p class="challenge-subtitle ls-lg"><?= htmlspecialchars($first['username']) ?> · <?= $first['xp_reward'] ?> XP</p>
         <div class="d-flex align-items-center gap-2 flex-wrap mb-4">
-          <div class="countdown-box"><span class="countdown-digit text-accent">2</span></div>
-          <div class="countdown-box"><span class="countdown-digit text-purple">5</span></div>
+          <div class="countdown-box"><span class="countdown-digit text-accent">-</span></div>
+          <div class="countdown-box"><span class="countdown-digit text-purple">-</span></div>
           <span class="countdown-separator">:</span>
-          <div class="countdown-box"><span class="countdown-digit text-accent">5</span></div>
-          <div class="countdown-box"><span class="countdown-digit text-accent">3</span></div>
+          <div class="countdown-box"><span class="countdown-digit text-accent">-</span></div>
+          <div class="countdown-box"><span class="countdown-digit text-accent">-</span></div>
           <span class="countdown-separator">:</span>
-          <div class="countdown-box"><span class="countdown-digit text-purple">5</span></div>
-          <div class="countdown-box"><span class="countdown-digit text-accent">9</span></div>
+          <div class="countdown-box"><span class="countdown-digit text-purple">-</span></div>
+          <div class="countdown-box"><span class="countdown-digit text-accent">-</span></div>
         </div>
         <p class="fw-bold text-white mb-1 ls-lg fs-25">Real-life challenge</p>
-        <h3 class="fw-bold mb-3 text-purple ls-lg challenge-title">BEER PONG</h3>
+        <h3 class="fw-bold mb-3 text-purple ls-lg challenge-title"><?= strtoupper(htmlspecialchars($first['title'])) ?></h3>
         <p class="challenge-desc mb-4">
-          &ldquo;Aim. Throw. Score! Try to land the ball in the glowing cups and show off your precision in this fun challenge.&rdquo;
+          &ldquo;<?= htmlspecialchars($first['description'] ?? 'No description available.') ?>&rdquo;
         </p>
         <div class="d-flex gap-3 flex-wrap">
-          <a href="#" class="btn btn-senex btn-round-68 btn-challenge">PARTICIPATE</a>
-          <a href="#" class="btn btn-senex btn-round-68 btn-challenge-wide">SEE MORE</a>
+          <a href="/dashboard/challenge/start/<?= $first['id'] ?>" class="btn btn-senex btn-round-68 btn-challenge">PARTICIPATE</a>
+          <a href="/streams" class="btn btn-senex btn-round-68 btn-challenge-wide">SEE MORE</a>
         </div>
       </div>
     </div>
+<?php endif; ?>
   </div>
 </section>
 
 <section class="section-padding px-3">
   <div class="container">
+<?php if (!empty($upcomingChallenges) && isset($upcomingChallenges[1])): $second = $upcomingChallenges[1]; ?>
     <div class="row align-items-center g-5" data-aos="fade-up">
       <div class="col-lg-6">
-        <p class="challenge-subtitle ls-lg">The dare is happening tomorrow</p>
+        <p class="challenge-subtitle ls-lg"><?= htmlspecialchars($second['username']) ?> · <?= $second['xp_reward'] ?> XP</p>
         <div class="d-flex align-items-center gap-2 flex-wrap mb-4">
-          <div class="countdown-box"><span class="countdown-digit text-accent">2</span></div>
-          <div class="countdown-box"><span class="countdown-digit text-purple">5</span></div>
+          <div class="countdown-box"><span class="countdown-digit text-accent">-</span></div>
+          <div class="countdown-box"><span class="countdown-digit text-purple">-</span></div>
           <span class="countdown-separator">:</span>
-          <div class="countdown-box"><span class="countdown-digit text-accent">5</span></div>
-          <div class="countdown-box"><span class="countdown-digit text-accent">3</span></div>
+          <div class="countdown-box"><span class="countdown-digit text-accent">-</span></div>
+          <div class="countdown-box"><span class="countdown-digit text-accent">-</span></div>
           <span class="countdown-separator">:</span>
-          <div class="countdown-box"><span class="countdown-digit text-purple">5</span></div>
-          <div class="countdown-box"><span class="countdown-digit text-accent">9</span></div>
+          <div class="countdown-box"><span class="countdown-digit text-purple">-</span></div>
+          <div class="countdown-box"><span class="countdown-digit text-accent">-</span></div>
         </div>
         <p class="fw-bold text-white mb-1 ls-lg fs-25">Real-life challenge</p>
-        <h3 class="fw-bold mb-3 text-purple ls-lg challenge-title">BEER PONG</h3>
+        <h3 class="fw-bold mb-3 text-purple ls-lg challenge-title"><?= strtoupper(htmlspecialchars($second['title'])) ?></h3>
         <p class="challenge-desc mb-4">
-          &ldquo;Aim. Throw. Score! Try to land the ball in the glowing cups and show off your precision in this fun challenge.&rdquo;
+          &ldquo;<?= htmlspecialchars($second['description'] ?? 'No description available.') ?>&rdquo;
         </p>
         <div class="d-flex gap-3 flex-wrap">
-          <a href="#" class="btn btn-senex btn-round-68 btn-challenge">PARTICIPATE</a>
-          <a href="#" class="btn btn-senex btn-round-68 btn-challenge-wide">SEE MORE</a>
+          <a href="/dashboard/challenge/start/<?= $second['id'] ?>" class="btn btn-senex btn-round-68 btn-challenge">PARTICIPATE</a>
+          <a href="/streams" class="btn btn-senex btn-round-68 btn-challenge-wide">SEE MORE</a>
         </div>
       </div>
       <div class="col-lg-6 text-center">
-        <img src="https://placehold.co/594x549" alt="Beer Pong" class="w-100 rounded-5 border-accent mw-594">
+        <img src="https://placehold.co/594x549" alt="<?= htmlspecialchars($second['title']) ?>" class="w-100 rounded-5 border-accent mw-594">
       </div>
     </div>
+<?php endif; ?>
   </div>
 </section>
 
@@ -201,7 +199,4 @@ ob_start();
     </div>
   </div>
 </section>
-<?php
 
-$content = ob_get_clean();
-require __DIR__ . '/base.php';

@@ -1,9 +1,3 @@
-<?php
-
-$title = "SENEX - Login";
-ob_start();
-
-?>
 <section class="section-padding px-3">
   <div class="container">
     <div class="row justify-content-center" data-aos="fade-up">
@@ -46,7 +40,4 @@ ob_start();
     </div>
   </div>
 </section>
-<?php
 
-$content = ob_get_clean();
-require __DIR__ . '/base.php';

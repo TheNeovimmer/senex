@@ -40,7 +40,10 @@ class AuthService {
     public function login(string $email, string $password): array {
         $user = $this->userModel->verifyPassword($email, $password);
         if (!$user) {
-            return ['success' => false, 'error' => 'Email ou mot de passe incorrect.'];
+            $user = $this->userModel->verifyPasswordByUsername($email, $password);
+        }
+        if (!$user) {
+            return ['success' => false, 'error' => 'Email/Utilisateur ou mot de passe incorrect.'];
         }
         if (($user['is_active'] ?? true) === false || ($user['is_banned'] ?? false)) {
             return ['success' => false, 'error' => 'Votre compte a été désactivé.'];

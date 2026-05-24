@@ -7,6 +7,8 @@ use Models\FollowModel;
 use Models\UserBadgeModel;
 use Models\BadgeModel;
 use Models\StreamModel;
+use Services\ChallengeService;
+use Services\ModerationService;
 
 class UserDashboardController extends DashboardController {
     private ChallengeModel $challengeModel;
@@ -15,6 +17,8 @@ class UserDashboardController extends DashboardController {
     private UserBadgeModel $userBadgeModel;
     private BadgeModel $badgeModel;
     private StreamModel $streamModel;
+    private ChallengeService $challengeService;
+    private ModerationService $moderationService;
 
     public function __construct(PDO $pdo) {
         parent::__construct($pdo);
@@ -24,6 +28,8 @@ class UserDashboardController extends DashboardController {
         $this->userBadgeModel = new UserBadgeModel($pdo);
         $this->badgeModel = new BadgeModel($pdo);
         $this->streamModel = new StreamModel($pdo);
+        $this->challengeService = new ChallengeService($pdo);
+        $this->moderationService = new ModerationService($pdo);
     }
 
     public function index(): void {
@@ -58,6 +64,11 @@ class UserDashboardController extends DashboardController {
 
     public function updateProfile(): void {
         $user = $this->authService->getCurrentUser();
+        if (!$this->authService->verifyCsrf($_POST['csrf_token'] ?? '')) {
+            $_SESSION['error'] = 'Session invalide. Veuillez réessayer.';
+            header('Location: /dashboard/profile');
+            exit;
+        }
         $this->profileModel->createOrUpdate($user['id'], [
             'bio' => $_POST['bio'] ?? '',
             'skills' => json_encode(explode(',', $_POST['skills'] ?? '')),
@@ -87,13 +98,47 @@ class UserDashboardController extends DashboardController {
         ]);
     }
 
+    public function startChallenge(int $id): void {
+        $user = $this->authService->getCurrentUser();
+        $challenge = $this->challengeModel->findById($id);
+        if (!$challenge || $challenge['status'] !== 'active') {
+            $_SESSION['error'] = 'Défi introuvable ou inactif.';
+            header('Location: /dashboard/challenges');
+            exit;
+        }
+        $existing = $this->attemptModel->getActiveAttempt($user['id'], $id);
+        if (!$existing) {
+            $this->attemptModel->insert([
+                'user_id' => $user['id'],
+                'challenge_id' => $id,
+                'started_at' => date('Y-m-d H:i:s'),
+                'completed' => false,
+                'score' => 0,
+                'time_taken_seconds' => 0
+            ]);
+            $_SESSION['message'] = 'Défi relevé! Bonne chance!';
+        }
+        header('Location: /dashboard/challenges');
+        exit;
+    }
+
     public function settings(): void {
         $this->render('dashboard/user/settings');
     }
 
     public function updateSettings(): void {
         $user = $this->authService->getCurrentUser();
+        if (!$this->authService->verifyCsrf($_POST['csrf_token'] ?? '')) {
+            $_SESSION['error'] = 'Session invalide.';
+            header('Location: /dashboard/settings');
+            exit;
+        }
         if (!empty($_POST['current_password']) && !empty($_POST['new_password'])) {
+            if ($_POST['new_password'] !== ($_POST['confirm_password'] ?? '')) {
+                $_SESSION['error'] = 'Les mots de passe ne correspondent pas.';
+                header('Location: /dashboard/settings');
+                exit;
+            }
             $currentUser = $this->userModel->findById($user['id']);
             if (password_verify($_POST['current_password'], $currentUser['password'])) {
                 $this->userModel->updatePassword($user['id'], $_POST['new_password']);
@@ -118,6 +163,37 @@ class UserDashboardController extends DashboardController {
     public function unfollow(int $userId): void {
         $user = $this->authService->getCurrentUser();
         $this->followModel->unfollow($user['id'], $userId);
+        header('Location: ' . ($_SERVER['HTTP_REFERER'] ?? '/dashboard'));
+        exit;
+    }
+
+    public function markAllNotificationsRead(): void {
+        $user = $this->authService->getCurrentUser();
+        $this->notificationModel->markAllAsRead($user['id']);
+        header('Location: ' . ($_SERVER['HTTP_REFERER'] ?? '/dashboard'));
+        exit;
+    }
+
+    public function markNotificationRead(int $id): void {
+        $this->notificationModel->markAsRead($id);
+        header('Location: ' . ($_SERVER['HTTP_REFERER'] ?? '/dashboard'));
+        exit;
+    }
+
+    public function submitReport(): void {
+        $user = $this->authService->getCurrentUser();
+        if (!$this->authService->verifyCsrf($_POST['csrf_token'] ?? '')) {
+            $_SESSION['error'] = 'Session invalide.';
+            header('Location: ' . ($_SERVER['HTTP_REFERER'] ?? '/dashboard'));
+            exit;
+        }
+        $this->moderationService->submitReport($user['id'], [
+            'reported_user_id' => !empty($_POST['reported_user_id']) ? (int)$_POST['reported_user_id'] : null,
+            'reason' => $_POST['reason'] ?? '',
+            'description' => $_POST['description'] ?? '',
+            'status' => 'pending'
+        ]);
+        $_SESSION['message'] = 'Signalement envoyé.';
         header('Location: ' . ($_SERVER['HTTP_REFERER'] ?? '/dashboard'));
         exit;
     }

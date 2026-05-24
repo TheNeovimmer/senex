@@ -1,9 +1,3 @@
-<?php
-
-$title = "SENEX - About Us";
-ob_start();
-
-?>
 <section class="section-padding px-3">
   <div class="container">
     <div class="hero-about-wrapper p-5" data-aos="fade-up">
@@ -116,7 +110,7 @@ ob_start();
       <div class="d-flex align-items-center gap-2">
         <i class="fas fa-users text-accent stat-icon"></i>
         <div>
-          <p class="stat-number-gradient">250k</p>
+          <p class="stat-number-gradient"><?= \Core\Helpers::formatNumber($userCount ?? 0) ?></p>
           <p class="stat-label">Active members</p>
         </div>
       </div>
@@ -124,30 +118,27 @@ ob_start();
       <div class="d-flex align-items-center gap-2">
         <i class="fas fa-gamepad text-accent stat-icon"></i>
         <div>
-          <p class="stat-number-gradient">100k</p>
-          <p class="stat-label">Games played</p>
+          <p class="stat-number-gradient"><?= \Core\Helpers::formatNumber($streamCount ?? 0) ?></p>
+          <p class="stat-label">Streams hosted</p>
         </div>
       </div>
       <div class="divider-vertical"></div>
       <div class="d-flex align-items-center gap-2">
         <i class="fas fa-trophy text-accent stat-icon"></i>
         <div>
-          <p class="stat-number-gradient">100k</p>
-          <p class="stat-label">Paid Represented</p>
+          <p class="stat-number-gradient"><?= \Core\Helpers::formatNumber($challengeCount ?? 0) ?></p>
+          <p class="stat-label">Challenges created</p>
         </div>
       </div>
       <div class="divider-vertical"></div>
       <div class="d-flex align-items-center gap-2">
         <i class="fas fa-flag-checkered text-accent stat-icon"></i>
         <div>
-          <p class="stat-number-gradient">100k</p>
-          <p class="stat-label">Challenges completed</p>
+          <p class="stat-number-gradient"><?= \Core\Helpers::formatNumber($streamCount ?? 0) ?></p>
+          <p class="stat-label">Completed streams</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<?php
 
-$content = ob_get_clean();
-require __DIR__ . '/base.php';

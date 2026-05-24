@@ -52,6 +52,11 @@ class StreamerDashboardController extends DashboardController {
 
     public function createStream(): void {
         $user = $this->authService->getCurrentUser();
+        if (!$this->authService->verifyCsrf($_POST['csrf_token'] ?? '')) {
+            $_SESSION['error'] = 'Session invalide.';
+            header('Location: /streamer/streams');
+            exit;
+        }
         $streamId = $this->streamService->createStream($user['id'], [
             'title' => $_POST['title'] ?? 'Nouveau stream',
             'description' => $_POST['description'] ?? '',
@@ -62,6 +67,7 @@ class StreamerDashboardController extends DashboardController {
 
         if ($streamId) {
             $_SESSION['message'] = 'Stream créé avec succès!';
+            $_SESSION['last_stream_id'] = $streamId;
         } else {
             $_SESSION['error'] = 'Erreur lors de la création du stream.';
         }
@@ -77,7 +83,8 @@ class StreamerDashboardController extends DashboardController {
 
     public function endLive(int $streamId): void {
         $this->streamService->endStream($streamId);
-        $_SESSION['message'] = 'Stream terminé.';
+        $this->streamService->generateReplay($streamId, 'Replay - ' . date('d/m/Y H:i'));
+        $_SESSION['message'] = 'Stream terminé. Un replay a été généré.';
         header('Location: /streamer/streams');
         exit;
     }
@@ -90,9 +97,11 @@ class StreamerDashboardController extends DashboardController {
             exit;
         }
         $activeChallenge = $this->challengeService->getActiveStreamChallenge($streamId);
+        $userChallenges = $this->challengeModel->findByUser($user['id']);
         $this->render('dashboard/streamer/live', [
             'stream' => $stream,
-            'activeChallenge' => $activeChallenge
+            'activeChallenge' => $activeChallenge,
+            'userChallenges' => $userChallenges
         ]);
     }
 
@@ -116,6 +125,11 @@ class StreamerDashboardController extends DashboardController {
 
     public function createChallenge(): void {
         $user = $this->authService->getCurrentUser();
+        if (!$this->authService->verifyCsrf($_POST['csrf_token'] ?? '')) {
+            $_SESSION['error'] = 'Session invalide.';
+            header('Location: /streamer/challenges');
+            exit;
+        }
         $challengeId = $this->challengeService->createChallenge($user['id'], [
             'title' => $_POST['title'] ?? '',
             'description' => $_POST['description'] ?? '',
@@ -146,6 +160,13 @@ class StreamerDashboardController extends DashboardController {
 
     public function startChallengeOnStream(int $streamId, int $challengeId): void {
         $this->challengeService->activateOnStream($streamId, $challengeId);
+        header("Location: /streamer/live/$streamId");
+        exit;
+    }
+
+    public function stopChallengeOnStream(int $streamId): void {
+        $this->challengeService->deactivateOnStream($streamId);
+        $_SESSION['message'] = 'Défi arrêté.';
         header("Location: /streamer/live/$streamId");
         exit;
     }

@@ -1,9 +1,3 @@
-<?php
-
-$title = "SENEX - Home";
-ob_start();
-
-?>
 <section class="hero-section px-3">
   <div class="container">
     <div class="row justify-content-center" data-aos="fade-up">
@@ -39,52 +33,65 @@ ob_start();
   </div>
 </section>
 
+<?php if (!empty($liveStreams)): ?>
 <section class="section-padding px-3">
   <div class="container">
     <h2 class="text-center mb-5 activity-section-title" data-aos="fade-up">
-      <span class="text-white">ARE YOU READY FOR </span>
-      <span class="text-accent">WHAT'S COMING?</span>
+      <span class="text-white">🔥 EN DIRECT </span>
+      <span class="text-accent">MAINTENANT</span>
     </h2>
     <div class="row g-4 justify-content-center" data-aos="fade-up">
+      <?php foreach (array_slice($liveStreams, 0, 3) as $stream): ?>
       <div class="col-md-6 col-lg-4">
-        <div class="card-activity">
-          <img src="https://placehold.co/359x343" alt="Tic-Tac-Toe" class="w-100">
-          <div class="p-4">
-            <p class="text-white mb-0 fw-medium ls-sm">
-              <span class="fw-bold">Tic-Tac-Toe</span><br>
-              Activity: Tic-Tac-Toe game with fluorescent tape.<br>Location: Game area under blacklight.
-            </p>
+        <a href="/stream/<?= $stream['id'] ?>" style="text-decoration:none">
+          <div class="card-activity">
+            <div class="position-relative">
+              <img src="<?= $stream['thumbnail_url'] ?? 'https://placehold.co/400x225/1E1E2F/F15BB5?text=Live' ?>" alt="" class="w-100" style="height:200px;object-fit:cover">
+              <span class="position-absolute top-0 start-0 m-2 badge bg-danger"><i class="fas fa-circle me-1"></i> LIVE</span>
+            </div>
+            <div class="p-4">
+              <h5 class="text-white mb-1"><?= htmlspecialchars($stream['title']) ?></h5>
+              <p class="text-white-50 small mb-0"><?= htmlspecialchars($stream['username']) ?> · <i class="fas fa-eye"></i> <?= \Core\Helpers::formatNumber($stream['viewer_count']) ?></p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card-activity-alt">
-          <img src="https://placehold.co/359x343" alt="Creative Table" class="w-100">
-          <div class="p-4">
-            <p class="text-white mb-0 fw-medium ls-sm">
-              <span class="fw-bold">Creative Table</span><br>
-              Activity: Creative workshop with glowing liquids and powders.<br>Location: Craft station.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card-activity-alt">
-          <img src="https://placehold.co/359x343" alt="Creative Table" class="w-100">
-          <div class="p-4">
-            <p class="text-white mb-0 fw-medium ls-sm">
-              <span class="fw-bold">Creative Table</span><br>
-              Activity: Creative workshop with glowing liquids and powders.<br>Location: Craft station.
-            </p>
-          </div>
-        </div>
-      </div>
+      <?php endforeach; ?>
     </div>
     <div class="text-center mt-4" data-aos="fade-up">
-      <a href="/replays" class="btn btn-senex px-5 py-3 fs-5 btn-round-xl">SEE MORE</a>
+      <a href="/streams" class="btn btn-senex px-5 py-3 fs-5 btn-round-xl">SEE ALL STREAMS</a>
     </div>
   </div>
 </section>
+<?php endif; ?>
+
+<?php if (!empty($activeChallenges)): ?>
+<section class="section-padding px-3">
+  <div class="container">
+    <h2 class="text-center mb-5 activity-section-title" data-aos="fade-up">
+      <span class="text-white">DÉFIS </span>
+      <span class="text-accent">ACTIFS</span>
+    </h2>
+    <div class="row g-4 justify-content-center" data-aos="fade-up">
+      <?php foreach (array_slice($activeChallenges, 0, 3) as $challenge): ?>
+      <div class="col-md-6 col-lg-4">
+        <div class="<?= $loop->index ?? 0 === 0 ? 'card-activity' : 'card-activity-alt' ?>">
+          <div class="p-4">
+            <span class="badge mb-2" style="background:<?= $challenge['difficulty'] === 'easy' ? '#4CAF50' : ($challenge['difficulty'] === 'medium' ? '#FF9800' : '#F44336') ?>"><?= $challenge['difficulty'] ?></span>
+            <h5 class="text-white mb-2"><?= htmlspecialchars($challenge['title']) ?></h5>
+            <p class="text-white-50 small mb-2"><?= \Core\Helpers::truncate($challenge['description'] ?? '', 100) ?></p>
+            <span class="text-accent small"><i class="fas fa-star me-1"></i><?= $challenge['xp_reward'] ?> XP</span>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+    <div class="text-center mt-4" data-aos="fade-up">
+      <a href="/dashboard/challenges" class="btn btn-senex px-5 py-3 fs-5 btn-round-xl">JOIN CHALLENGES</a>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
 
 <section class="section-padding px-3">
   <div class="container-fluid px-0" data-aos="fade-up">
@@ -93,11 +100,19 @@ ob_start();
         <h2 class="display-4 fw-bold mb-3 text-accent ls-md">RELIVE THE WILDEST DARES</h2>
         <p class="text-white fs-5 mb-5 ls-lg">the best moments, anytime you want</p>
         <div class="d-flex justify-content-center align-items-end gap-2 flex-wrap mb-5">
-          <img src="https://placehold.co/158x297" alt="Replay 1" class="replay-stagger-img" style="width: clamp(80px, 10vw, 158px);">
-          <img src="https://placehold.co/217x408" alt="Replay 2" class="replay-stagger-img" style="width: clamp(110px, 14vw, 217px);">
-          <img src="https://placehold.co/350x502" alt="Replay 3" class="replay-stagger-img" style="width: clamp(160px, 20vw, 350px);">
-          <img src="https://placehold.co/217x408" alt="Replay 4" class="replay-stagger-img" style="width: clamp(110px, 14vw, 217px);">
-          <img src="https://placehold.co/158x299" alt="Replay 5" class="replay-stagger-img" style="width: clamp(80px, 10vw, 158px);">
+          <?php if (!empty($recentReplays)): ?>
+            <?php foreach (array_slice($recentReplays, 0, 5) as $i => $replay): ?>
+            <a href="/replay/<?= $replay['id'] ?>">
+              <img src="<?= $replay['thumbnail_url'] ?? 'https://placehold.co/' . ([158,217,350,217,158][$i] ?? 158) . 'x' . ([297,408,502,408,299][$i] ?? 300) . '/1E1E2F/F15BB5?text=Replay' ?>" alt="<?= htmlspecialchars($replay['title']) ?>" class="replay-stagger-img" style="width: clamp(80px, 10vw, <?= [158,217,350,217,158][$i] ?? 158 ?>px);">
+            </a>
+            <?php endforeach; ?>
+          <?php else: ?>
+          <img src="https://placehold.co/158x297" alt="" class="replay-stagger-img" style="width: clamp(80px, 10vw, 158px);">
+          <img src="https://placehold.co/217x408" alt="" class="replay-stagger-img" style="width: clamp(110px, 14vw, 217px);">
+          <img src="https://placehold.co/350x502" alt="" class="replay-stagger-img" style="width: clamp(160px, 20vw, 350px);">
+          <img src="https://placehold.co/217x408" alt="" class="replay-stagger-img" style="width: clamp(110px, 14vw, 217px);">
+          <img src="https://placehold.co/158x299" alt="" class="replay-stagger-img" style="width: clamp(80px, 10vw, 158px);">
+          <?php endif; ?>
         </div>
         <a href="/replays" class="btn btn-senex px-5 py-3 fs-5 btn-round-xl ls-md">WATCH ALL REPLAYS</a>
       </div>
@@ -170,7 +185,4 @@ ob_start();
     </div>
   </div>
 </section>
-<?php
 
-$content = ob_get_clean();
-require __DIR__ . '/base.php';

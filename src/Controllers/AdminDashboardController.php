@@ -74,7 +74,8 @@ class AdminDashboardController extends DashboardController {
     public function toggleUserStatus(int $userId): void {
         $user = $this->userModel->findById($userId);
         if ($user) {
-            $this->userModel->update($userId, ['is_active' => !($user['is_active'] ?? true)]);
+            $isActive = isset($user['is_active']) ? (bool)$user['is_active'] : true;
+            $this->userModel->update($userId, ['is_active' => !$isActive]);
         }
         header('Location: /admin/users');
         exit;
@@ -82,13 +83,35 @@ class AdminDashboardController extends DashboardController {
 
     public function streams(): void {
         $page = max(1, (int)($_GET['page'] ?? 1));
-        $streams = $this->streamModel->paginate($page, 20);
+        $perPage = 20;
+        $offset = ($page - 1) * $perPage;
+        $total = $this->pdo->query("SELECT COUNT(*) FROM streams")->fetchColumn();
+        $stmt = $this->pdo->prepare("SELECT s.*, u.username as streamer_name, c.name as category_name FROM streams s LEFT JOIN users u ON s.user_id = u.id LEFT JOIN categories c ON s.category_id = c.id ORDER BY s.created_at DESC LIMIT $perPage OFFSET $offset");
+        $stmt->execute();
+        $streams = [
+            'items' => $stmt->fetchAll(\PDO::FETCH_ASSOC),
+            'total' => $total,
+            'page' => $page,
+            'perPage' => $perPage,
+            'lastPage' => max(1, (int)ceil($total / $perPage))
+        ];
         $this->render('dashboard/admin/streams', ['streamsData' => $streams]);
     }
 
     public function challenges(): void {
         $page = max(1, (int)($_GET['page'] ?? 1));
-        $challenges = $this->challengeModel->paginate($page, 20);
+        $perPage = 20;
+        $offset = ($page - 1) * $perPage;
+        $total = $this->pdo->query("SELECT COUNT(*) FROM challenges")->fetchColumn();
+        $stmt = $this->pdo->prepare("SELECT ch.*, u.username as creator_name FROM challenges ch LEFT JOIN users u ON ch.user_id = u.id ORDER BY ch.created_at DESC LIMIT $perPage OFFSET $offset");
+        $stmt->execute();
+        $challenges = [
+            'items' => $stmt->fetchAll(\PDO::FETCH_ASSOC),
+            'total' => $total,
+            'page' => $page,
+            'perPage' => $perPage,
+            'lastPage' => max(1, (int)ceil($total / $perPage))
+        ];
         $this->render('dashboard/admin/challenges', ['challengesData' => $challenges]);
     }
 
@@ -102,10 +125,15 @@ class AdminDashboardController extends DashboardController {
     }
 
     public function handleReport(int $reportId): void {
+        if (!$this->authService->verifyCsrf($_POST['csrf_token'] ?? '')) {
+            $_SESSION['error'] = 'Session invalide.';
+            header('Location: /admin/reports');
+            exit;
+        }
         $status = $_POST['status'] ?? 'reviewed';
         $admin = $this->authService->getCurrentUser();
         $this->moderationService->reviewReport($reportId, $status, $admin['id']);
-        if ($status === 'action_taken' && !empty($_POST['suspend_user'])) {
+        if ($status === 'action_taken') {
             $report = $this->reportModel->findById($reportId);
             if ($report && $report['reported_user_id']) {
                 $this->moderationService->suspendUser((int)$report['reported_user_id'], $admin['id']);
@@ -122,6 +150,11 @@ class AdminDashboardController extends DashboardController {
     }
 
     public function createCategory(): void {
+        if (!$this->authService->verifyCsrf($_POST['csrf_token'] ?? '')) {
+            $_SESSION['error'] = 'Session invalide.';
+            header('Location: /admin/categories');
+            exit;
+        }
         $this->categoryModel->insert([
             'name' => $_POST['name'] ?? '',
             'slug' => \Core\Helpers::slugify($_POST['name'] ?? ''),
@@ -135,18 +168,17 @@ class AdminDashboardController extends DashboardController {
         exit;
     }
 
-    public function deleteCategory(int $id): void {
-        $this->categoryModel->delete($id);
-        header('Location: /admin/categories');
-        exit;
-    }
-
     public function badges(): void {
         $badges = $this->badgeModel->findAll('name ASC');
         $this->render('dashboard/admin/badges', ['badges' => $badges]);
     }
 
     public function createBadge(): void {
+        if (!$this->authService->verifyCsrf($_POST['csrf_token'] ?? '')) {
+            $_SESSION['error'] = 'Session invalide.';
+            header('Location: /admin/badges');
+            exit;
+        }
         $this->badgeModel->insert([
             'name' => $_POST['name'] ?? '',
             'slug' => \Core\Helpers::slugify($_POST['name'] ?? ''),
@@ -161,21 +193,44 @@ class AdminDashboardController extends DashboardController {
         exit;
     }
 
-    public function deleteBadge(int $id): void {
-        $this->badgeModel->delete($id);
-        header('Location: /admin/badges');
-        exit;
-    }
-
     public function aiSettings(): void {
         $suggestions = $this->pdo->query("SELECT * FROM ai_suggestions ORDER BY created_at DESC LIMIT 20")->fetchAll(\PDO::FETCH_ASSOC);
         $this->render('dashboard/admin/ai', ['suggestions' => $suggestions]);
     }
 
     public function generateSuggestion(): void {
+        if (!$this->authService->verifyCsrf($_POST['csrf_token'] ?? '')) {
+            $_SESSION['error'] = 'Session invalide.';
+            header('Location: /admin/ai');
+            exit;
+        }
         $this->aiService->generateChallengeSuggestion(0, $_POST);
         $_SESSION['message'] = 'Suggestion AI générée.';
         header('Location: /admin/ai');
+        exit;
+    }
+
+    public function deleteCategory(int $id): void {
+        if (!$this->authService->verifyCsrf($_POST['csrf_token'] ?? '')) {
+            $_SESSION['error'] = 'Session invalide.';
+            header('Location: /admin/categories');
+            exit;
+        }
+        $this->categoryModel->delete($id);
+        $_SESSION['message'] = 'Catégorie supprimée.';
+        header('Location: /admin/categories');
+        exit;
+    }
+
+    public function deleteBadge(int $id): void {
+        if (!$this->authService->verifyCsrf($_POST['csrf_token'] ?? '')) {
+            $_SESSION['error'] = 'Session invalide.';
+            header('Location: /admin/badges');
+            exit;
+        }
+        $this->badgeModel->delete($id);
+        $_SESSION['message'] = 'Badge supprimé.';
+        header('Location: /admin/badges');
         exit;
     }
 }

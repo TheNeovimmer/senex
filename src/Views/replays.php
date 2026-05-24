@@ -1,9 +1,3 @@
-<?php
-
-$title = "SENEX - Replays";
-ob_start();
-
-?>
 <section class="section-padding px-3">
   <div class="container">
     <div class="hero-bordered-sm text-center py-5 mb-5" data-aos="fade-up">
@@ -28,68 +22,51 @@ ob_start();
       </div>
     </div>
 
-    <?php
-    $replays = [
-      [
-        'title' => 'Grimpe Vagues',
-        'desc' => 'Climb wave-shaped structures, testing your agility and control.',
-        'views' => '40k', 'likes' => '54k', 'comments' => '1.2k', 'plays' => '450k', 'duration' => '15:42'
-      ],
-      [
-        'title' => 'Parcours Maki',
-        'desc' => 'An obstacle course that challenges your speed, strength, and coordination.',
-        'views' => '40k', 'likes' => '54k', 'comments' => '1.2k', 'plays' => '450k', 'duration' => '15:42'
-      ],
-      [
-        'title' => 'Labyrinthe Rachid',
-        'desc' => 'A maze where you need strategy and orientation to find the way out.',
-        'views' => '40k', 'likes' => '54k', 'comments' => '1.2k', 'plays' => '450k', 'duration' => '15:42'
-      ]
-    ];
-    ?>
-
     <div class="mx-auto mw-1174" data-aos="fade-up">
-      <?php foreach ($replays as $replay): ?>
-      <div class="d-flex flex-column flex-lg-row align-items-start gap-4 mb-5 pb-4 section-divider">
-        <div class="replay-thumb-wrapper">
-          <img src="https://placehold.co/406x266" alt="<?= $replay['title'] ?>" class="w-100 rounded-4">
-          <div class="replay-play-overlay">
-            <i class="fas fa-play text-white fs-3"></i>
+      <?php if (!empty($replays)): ?>
+        <?php foreach ($replays as $replay): ?>
+        <div class="d-flex flex-column flex-lg-row align-items-start gap-4 mb-5 pb-4 section-divider">
+          <a href="/replay/<?= $replay['id'] ?>" class="replay-thumb-wrapper" style="text-decoration:none">
+            <img src="<?= $replay['thumbnail_url'] ?? 'https://placehold.co/406x266/1E1E2F/F15BB5?text=Replay' ?>" alt="<?= htmlspecialchars($replay['title']) ?>" class="w-100 rounded-4">
+            <div class="replay-play-overlay">
+              <i class="fas fa-play text-white fs-3"></i>
+            </div>
+            <span class="replay-duration"><?= htmlspecialchars($replay['duration'] ?? '--:--') ?></span>
+          </a>
+          <div class="flex-grow-1">
+            <h4 class="replay-title"><?= htmlspecialchars($replay['title']) ?></h4>
+            <p class="replay-desc"><?= htmlspecialchars($replay['description'] ?? $replay['title']) ?></p>
+            <div class="replay-stats">
+              <div class="replay-stat-item">
+                <i class="fas fa-eye replay-stat-icon"></i>
+                <span class="replay-stat-label"><?= \Core\Helpers::formatNumber($replay['view_count'] ?? 0) ?></span>
+              </div>
+              <div class="replay-stat-item">
+                <i class="fas fa-heart text-accent replay-heart-icon"></i>
+                <span class="replay-stat-label"><?= \Core\Helpers::formatNumber($replay['like_count'] ?? 0) ?></span>
+              </div>
+              <div class="replay-stat-item">
+                <i class="fas fa-comment replay-stat-icon"></i>
+                <span class="replay-stat-label"><?= \Core\Helpers::formatNumber($replay['comment_count'] ?? 0) ?></span>
+              </div>
+              <div class="replay-stat-item">
+                <i class="fas fa-play replay-stat-icon replay-play-icon-sm"></i>
+                <span class="replay-stat-label"><?= \Core\Helpers::formatNumber($replay['play_count'] ?? 0) ?></span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="replay-timestamp"><?= $replay['username'] ?? '' ?> · <?= !empty($replay['created_at']) ? (new DateTime($replay['created_at']))->diff(new DateTime())->days . ' days ago' : '' ?></span>
+              <i class="fas fa-ellipsis-v ellipsis-btn"></i>
+            </div>
           </div>
-          <span class="replay-duration"><?= $replay['duration'] ?></span>
         </div>
-        <div class="flex-grow-1">
-          <h4 class="replay-title"><?= $replay['title'] ?></h4>
-          <p class="replay-desc"><?= $replay['desc'] ?></p>
-          <div class="replay-stats">
-            <div class="replay-stat-item">
-              <i class="fas fa-eye replay-stat-icon"></i>
-              <span class="replay-stat-label"><?= $replay['views'] ?></span>
-            </div>
-            <div class="replay-stat-item">
-              <i class="fas fa-heart text-accent replay-heart-icon"></i>
-              <span class="replay-stat-label"><?= $replay['likes'] ?></span>
-            </div>
-            <div class="replay-stat-item">
-              <i class="fas fa-comment replay-stat-icon"></i>
-              <span class="replay-stat-label"><?= $replay['comments'] ?></span>
-            </div>
-            <div class="replay-stat-item">
-              <i class="fas fa-play replay-stat-icon replay-play-icon-sm"></i>
-              <span class="replay-stat-label"><?= $replay['plays'] ?></span>
-            </div>
-          </div>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <span class="replay-timestamp">2 days ago</span>
-            <i class="fas fa-ellipsis-v ellipsis-btn"></i>
-          </div>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <div class="text-center py-5">
+          <p class="text-white-50 fs-5">No replays available yet. Check back soon!</p>
+          <a href="/" class="btn btn-outline-senex mt-3">Go Home</a>
         </div>
-      </div>
-      <?php endforeach; ?>
+      <?php endif; ?>
     </div>
   </div>
 </section>
-<?php
-
-$content = ob_get_clean();
-require __DIR__ . '/base.php';

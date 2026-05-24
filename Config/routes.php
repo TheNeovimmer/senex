@@ -239,9 +239,78 @@ return [
         "middleware" => "role:admin",
     ],
 
-    // ===== Blog routes (legacy) =====
-    "blog/:slug" => [
+    // ===== Chat API =====
+    "api/chat/messages" => [
         "method" => "GET",
-        "controller" => [\Controllers\HomeController::class, 'showBlogPost'],
+        "controller" => [\Controllers\ChatController::class, 'getMessages'],
+    ],
+    "api/chat/send" => [
+        "method" => "POST",
+        "controller" => [\Controllers\ChatController::class, 'sendMessage'],
+    ],
+
+    // ===== Notifications =====
+    "dashboard/notifications/read-all" => [
+        "method" => "GET",
+        "controller" => [\Controllers\UserDashboardController::class, 'markAllNotificationsRead'],
+        "middleware" => "auth",
+    ],
+    "dashboard/notifications/mark/:id" => [
+        "method" => "GET",
+        "controller" => [\Controllers\UserDashboardController::class, 'markNotificationRead'],
+        "middleware" => "auth",
+    ],
+
+    // ===== Challenge participation =====
+    "dashboard/challenge/start/:id" => [
+        "method" => "GET",
+        "controller" => [\Controllers\UserDashboardController::class, 'startChallenge'],
+        "middleware" => "auth",
+    ],
+
+    // ===== Public pages (dynamic) =====
+    "streams" => [
+        "method" => "GET",
+        "controller" => [\Controllers\HomeController::class, 'showStreams'],
+    ],
+    "stream/:id" => [
+        "method" => "GET",
+        "controller" => [\Controllers\HomeController::class, 'showStreamDetail'],
+    ],
+    "replay/:id" => [
+        "method" => "GET",
+        "controller" => [\Controllers\HomeController::class, 'showReplayDetail'],
+    ],
+
+    // ===== Search =====
+    "search" => [
+        "method" => "GET",
+        "controller" => [\Controllers\SearchController::class, 'search'],
+    ],
+
+    // ===== Leaderboard =====
+    "leaderboard/:challengeId" => [
+        "method" => "GET",
+        "controller" => [\Controllers\ResultsController::class, 'leaderboard'],
+    ],
+
+    // ===== Public profile =====
+    "profile/:userId" => [
+        "method" => "GET",
+        "controller" => [\Controllers\ProfileController::class, 'showProfile'],
+    ],
+
+    // ===== Report =====
+    "dashboard/report" => [
+        "method" => "POST",
+        "controller" => [\Controllers\UserDashboardController::class, 'submitReport'],
+        "middleware" => "auth",
+    ],
+
+    // ===== Stop challenge on stream =====
+    "streamer/live/stop-challenge/:streamId" => [
+        "method" => "GET",
+        "controller" => [\Controllers\StreamerDashboardController::class, 'stopChallengeOnStream'],
+        "middleware" => "role:streamer,admin",
     ],
 ];

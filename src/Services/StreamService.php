@@ -71,5 +71,17 @@ class StreamService {
     public function notifyFollowers(int $streamId): void {
         $stream = $this->streamModel->findById($streamId);
         if (!$stream) return;
+        $stmt = $this->streamModel->pdo->prepare("SELECT follower_id FROM follows WHERE following_id = ?");
+        $stmt->execute([$stream['user_id']]);
+        $followers = $stmt->fetchAll(\PDO::FETCH_COLUMN);
+        foreach ($followers as $followerId) {
+            $this->notificationModel->notify(
+                $followerId,
+                'stream_start',
+                $stream['title'] . ' est en direct!',
+                'Venez regarder le stream en cours.',
+                '/stream/' . $streamId
+            );
+        }
     }
 }

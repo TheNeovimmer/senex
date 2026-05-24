@@ -1,9 +1,3 @@
-<?php
-
-$title = "SENEX - Contact";
-ob_start();
-
-?>
 <section class="section-padding px-3">
   <div class="container">
     <div class="row align-items-center g-5" data-aos="fade-up">
@@ -51,8 +45,8 @@ ob_start();
     <div class="row g-5 align-items-start justify-content-center" data-aos="fade-up">
       <div class="col-lg-6">
         <div class="contact-form-card">
-          <form action="/contact/send" method="POST">
-            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+          <form action="/contact" method="POST">
+            <input type="hidden" name="csrf_token" value="<?= $csrf ?>">
             <div class="d-flex gap-3 mb-3">
               <input type="text" name="name" class="input-senex" placeholder="Name" required>
               <input type="email" name="email" class="input-senex" placeholder="Email" required>
@@ -98,7 +92,4 @@ ob_start();
     </div>
   </div>
 </section>
-<?php
 
-$content = ob_get_clean();
-require __DIR__ . '/base.php';

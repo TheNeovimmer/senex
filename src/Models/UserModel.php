@@ -27,6 +27,14 @@ class UserModel extends BaseModel {
         return null;
     }
 
+    public function verifyPasswordByUsername(string $username, string $password): ?array {
+        $user = $this->findByUsername($username);
+        if ($user && password_verify($password, $user['password'])) {
+            return $user;
+        }
+        return null;
+    }
+
     public function updateLastLogin(int $id): bool {
         return $this->update($id, ['last_login' => date('Y-m-d H:i:s')]);
     }

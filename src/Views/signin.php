@@ -1,9 +1,3 @@
-<?php
-
-$title = "SENEX - Sign Up";
-ob_start();
-
-?>
 <section class="section-padding px-3">
   <div class="container">
     <div class="row justify-content-center" data-aos="fade-up">
@@ -47,7 +41,7 @@ ob_start();
             <form action="/signin" method="POST">
               <div class="mb-3">
                 <label class="form-label fw-medium text-dark-secondary">Full name</label>
-                <input type="text" name="fullname" class="form-control input-auth" placeholder="Enter your full name" required>
+                <input type="text" name="username" class="form-control input-auth" placeholder="Enter your username" required>
               </div>
               <div class="mb-3">
                 <label class="form-label fw-medium text-dark-primary">Email</label>
@@ -79,7 +73,4 @@ ob_start();
     </div>
   </div>
 </section>
-<?php
 
-$content = ob_get_clean();
-require __DIR__ . '/base.php';

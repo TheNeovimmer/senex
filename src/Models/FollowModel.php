@@ -40,10 +40,14 @@ class FollowModel extends BaseModel {
     }
 
     public function countFollowers(int $userId): int {
-        return (int)$this->pdo->prepare("SELECT COUNT(*) FROM follows WHERE following_id = ?")->execute([$userId])->fetchColumn();
+        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM follows WHERE following_id = ?");
+        $stmt->execute([$userId]);
+        return (int)$stmt->fetchColumn();
     }
 
     public function countFollowing(int $userId): int {
-        return (int)$this->pdo->prepare("SELECT COUNT(*) FROM follows WHERE follower_id = ?")->execute([$userId])->fetchColumn();
+        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM follows WHERE follower_id = ?");
+        $stmt->execute([$userId]);
+        return (int)$stmt->fetchColumn();
     }
 }
