@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark py-3 px-4" style="background: #1E1E2F; border-bottom: 1px solid rgba(241, 91, 181, 0.2);">
+<nav class="navbar navbar-expand-lg navbar-dark py-3 px-4 navbar-senex">
   <div class="container">
     <a class="navbar-brand" href="/">
       <img src="/assets/images/logo.png" alt="SENEX" height="30">
@@ -9,22 +9,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto gap-lg-4">
         <li class="nav-item">
-          <a class="nav-link fw-bold" href="/" style="color: #F15BB5;">HOME</a>
+          <a class="nav-link nav-link-senex active" href="/">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold" href="/next" style="color: #F9F0F0;">NEXT DARE</a>
+          <a class="nav-link nav-link-senex" href="/next">NEXT DARE</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold" href="/replays" style="color: #F9F0F0;">REPLAYS</a>
+          <a class="nav-link nav-link-senex" href="/replays">REPLAYS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold" href="/aboutus" style="color: #F9F0F0;">ABOUT US</a>
+          <a class="nav-link nav-link-senex" href="/aboutus">ABOUT US</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-medium" href="/contact" style="color: #F9F0F0;">CONTACT</a>
+          <a class="nav-link nav-link-senex" href="/contact">CONTACT</a>
         </li>
       </ul>
-      <a href="/login" class="nav-link ms-lg-3" style="color: #F15BB5;">
+      <a href="/login" class="nav-link ms-lg-3 text-accent">
         <i class="fas fa-user-circle fa-xl"></i>
       </a>
     </div>
